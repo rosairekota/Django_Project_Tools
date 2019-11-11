@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-		<html>
-		<head>
-			<title>Projet Django</title>
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		</head>
-		<body>
-			
-			<div class="container text-info ">
+{% extends "blog/base.html" %}
+
+{% block content %}
 				<ul>
 					<h4>List des Etudiants de par prommotion:</h4>
 				{% for et in etudiant %}
@@ -15,9 +9,5 @@
 				
 				{% endfor %}
 				</ul>
-				<h1 class='text-center'> Hello Word Wh're working </h1>
-				
-			</div>
-		  
-		</body>
-		</html>
+
+{% endblock %}

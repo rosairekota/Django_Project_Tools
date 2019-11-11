@@ -54,8 +54,7 @@ def student_page(request):
 	return render(request,"home_page.html",context)
 
 
-def register(request):
-	render("users/register.html")
+
 
 
 

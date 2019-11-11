@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+	{% block content %}
+			
+				 <div class="row">
+				 		
+				  	 	<div class=" col-sm-6 col-md-6 col-lg-6 text-default">
+				  	 	{% for post in posts %}
+				 		<div class="img-thumbnail mb-3">
+				 		<p><span class="text-info">{{post.author}}</span> on {{post.date_posted}}</p> <hr>
+				 			<h1>{{post.title}}</h1>
+				 				
+				 			<p>{{post.content}}(...)</p>
+				 		</div>
+				 				{% endfor %} 
+				 			</div>
+				 		
+				 		
+				 	
+				 	<div class="col-sm-3 col-md-3 col-lg-3 offset-lg-1 offset-md-1 offset-sm-1 img-thumbnail">
+				 		<h2>Ouer SideBar</h2>
+				 		<p>This is the sidebar of ouer posts...</p>
+				 		<div class="img-thumbnail mb-3 alert alert-info">
+				 			<h6>Last Posts</h6> <hr>
+				 			<h6>Annoncement</h6><hr>
+				 			<h6>Calendar</h6>
+				 		</div>
+
+				 	</div>
+				  
+				 </div>
+		{% endblock content %}
