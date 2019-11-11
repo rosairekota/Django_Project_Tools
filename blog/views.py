@@ -1,30 +1,25 @@
 from django.shortcuts import render
+from .models import Post
+from django.contrib.auth.models import User
 
 
 
-
-posts=[
-		{"author":"CoreyMs",
-		 "title":"Blog post First",
-		 "content":"First post content",
-		 "date_posted":" Novenmber 11, 2019"
-		},
-		{"author":"Rosaire",
-		 "title":"Blog post Second",
-		 "content":"Second post content",
-		 "date_posted":" Novenmber 12, 2019"
-		},
-		{"author":"Wivine",
-		 "title":"Blog post Third",
-		 "content":"Third...Lorem ipsum... post content",
-		 "date_posted":" Novenmber 12, 2019"
-		}
-]
-
+posts=Post.objects.all()
+user=User.objects.get(pk=1)
+user.post_set.create(title="toto4",content="blabla")
 
 
 def home(request):
-	post_p=list(filter(lambda p:p['author']=='Rosaire' or p['author']=='CoreyMs',posts ))
+	
+	context={"posts":posts}
+	return render(request,"blog/home.html",context)
+
+
+def lastposts(request):
+	post_p=list(filter(lambda p:p['author']=='Rosaire' or p['author']=='CoreyMs',Post.objects.all() ))
 	context={"posts":post_p}
 	return render(request,"blog/home.html",context)
 
+def annonce(request):
+	
+	return render(request,"blog/home.html",{})

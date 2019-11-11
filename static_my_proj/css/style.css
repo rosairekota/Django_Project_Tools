@@ -4,6 +4,7 @@
 				margin: auto;
 				padding: auto;
 				color:#333333;
+				text-decoration: none;
 
 	        }
 	        h1,h2,h3,h4,h5,h6{
@@ -12,5 +13,8 @@
 	        .navbar-nav .nav-link{
 	        	color:#cbd5db;
 	        }
-
+	        a{
+	        	text-decoration: none;
+	        }
+	      
 	

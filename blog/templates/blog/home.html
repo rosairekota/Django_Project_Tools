@@ -6,6 +6,7 @@
 				  	 	<div class=" col-sm-6 col-md-6 col-lg-6 text-default">
 				  	 	{% for post in posts %}
 				 		<div class="img-thumbnail mb-3">
+				 		
 				 		<p><span class="text-info">{{post.author}}</span> on {{post.date_posted}}</p> <hr>
 				 			<h1>{{post.title}}</h1>
 				 				
@@ -20,8 +21,8 @@
 				 		<h2>Ouer SideBar</h2>
 				 		<p>This is the sidebar of ouer posts...</p>
 				 		<div class="img-thumbnail mb-3 alert alert-info">
-				 			<h6>Last Posts</h6> <hr>
-				 			<h6>Annoncement</h6><hr>
+				 			<h6><a href="{% url 'blog-last-post'%}" title="">Last Posts</a></h6> <hr>
+				 			<h6><a href="{% url 'blog-post-annonce'%}" title="">Annoncement</a></h6><hr>
 				 			<h6>Calendar</h6>
 				 		</div>
 
