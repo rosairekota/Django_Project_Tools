@@ -1,6 +1,6 @@
 	body{
 				background-color:#fafafa;
-				font-family: arial,"sans serif";
+				font-family: 'Helvetica';
 				margin: auto;
 				padding: auto;
 				color:#333333;
@@ -11,10 +11,12 @@
 	        	color: #444444;
 	        }
 	        .navbar-nav .nav-link{
-	        	color:#cbd5db;
+	        	color:white;
 	        }
 	        a{
 	        	text-decoration: none;
 	        }
-	      
+	      .navbar .navbar-expand-lg .navbar-light{
+	      	background-color:blue;
+	      }
 	
