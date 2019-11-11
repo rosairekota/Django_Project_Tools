@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+		<html>
+		<head>
+			<title>Projet Django</title>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		</head>
+		<body>
+			
+			<div class="container text-info ">
+				<ul>
+					<h4>List des Etudiants de par prommotion:</h4>
+				{% for et in etudiant %}
+				
+					<li>{{et.nom}} -> <span>{{et.promotion}}</span> =<span>{{et.pourcentage}} %</span></li>
+				
+				{% endfor %}
+				</ul>
+				<h1 class='text-center'> Hello Word Wh're working </h1>
+				
+			</div>
+		  
+		</body>
+		</html>
