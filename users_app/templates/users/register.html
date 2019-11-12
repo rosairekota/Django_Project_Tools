@@ -2,14 +2,14 @@
 {% block content %}
 
 		<div class="content-section">
-			<form action="register_submit" method="get" accept-charset="utf-8" class="img-thumbnail">
+			<form  method="POST"  class="img-thumbnail">
 			{% csrf_token %}
 					<fieldset class="form-group">
 						<legend class="border-bottom mb-4">Enregistrer Un nouveau Utilisateur</legend>
 						<div class="row">
 							<div class="col-sm-6 col-12 offset-sm-3">
 								
-									{{form.as_p}} <!-- as_p: permet d'aligner les explik input -->
+									{{form}} <!-- as_p: permet d'aligner les explik input -->
 							
 							</div>
 						</div>
