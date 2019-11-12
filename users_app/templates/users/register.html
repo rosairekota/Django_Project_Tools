@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		</head>
-	<body>
-			
-			<div class="container text-info mt-5">
-				<form action="register_submit" method="get" accept-charset="utf-8">
-					<fieldset>
-						<legend>Enregistrer Un nouveau Utilisateur</legend>
-						{{form}}
+{% extends 'blog/base.html' %}
+{% block content %}
+
+		<div class="content-section">
+			<form action="register_submit" method="get" accept-charset="utf-8" class="img-thumbnail">
+			{% csrf_token %}
+					<fieldset class="form-group">
+						<legend class="border-bottom mb-4">Enregistrer Un nouveau Utilisateur</legend>
+						<div class="row">
+							<div class="col-sm-6 col-12 offset-sm-3">
+								
+									{{form.as_p}} <!-- as_p: permet d'aligner les explik input -->
+							
+							</div>
+						</div>
 					</fieldset>
+						<div class="col-sm-6 col-12 offset-sm-3 form-group">
+								
+									<button type="submit" class="btn btn-outline-primary btn-block">S'inscrire</button>
+							
+						</div>
+
+						<div class="border-top pt-2">
+					<small class="text-muted">Avez-vous deja un compte ? 
+						<a href="#" title="" class="ml-2">Connectez-vous</a>
+					</small>
+				</div>
 				</form>
-			</div>
-	
-</body>
-</html>
+				
+		</div>
+{% endblock %}

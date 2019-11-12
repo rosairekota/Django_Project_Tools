@@ -3,4 +3,5 @@ from django.contrib.auth.forms import UserCreationForm
 
 def register(request):
 	form=UserCreationForm()
-	return render(request,"users/register.html",{"from":form})
+	context={"form":form}
+	return render(request,"users/register.html",context)
