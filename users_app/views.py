@@ -5,9 +5,11 @@ from .form import UserForm
 def register(request):
 	if request.method=='POST':
 		form=UserForm(request.POST)
-		form.save()
+		
 		if form.is_valid():
 			username=form.cleaned_data.get('username')
+			
+			form.save()
 			return redirect(request,'blog/home.html',{})
 	else:
 		form=UserForm()

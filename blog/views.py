@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 
 posts=Post.objects.all()
-user=User.objects.get(pk=1)
-user.post_set.create(title="toto4",content="blabla")
+#user=User.objects.get(pk=1)
+#user.post_set.create(title="toto4",content="blabla")
 
 
 def home(request):
