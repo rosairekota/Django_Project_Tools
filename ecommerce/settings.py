@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users_app.apps.UsersAppConfig',
     'blog.apps.BlogConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -105,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-en'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -124,3 +125,7 @@ STATICFILES_DIRS=(
     os.path.join(BASE_DIR, 'static_my_proj'),
     )
 STATIC_ROOT=os.path.join(BASE_DIR, 'static_cdn')
+CRISPY_TEMPLATE_PACK='bootstrap4'
+LOGIN_REDIRECT_URL='blog-home'
+LOGIN_URL='user-login'
+

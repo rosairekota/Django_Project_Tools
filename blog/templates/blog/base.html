@@ -27,21 +27,44 @@
 				            <a class="nav-link" href="{% url 'blog-home' %}" style="color: #eefbfb;">Blog</a>
 				          </li>
 				        </ul>
+
 				        <ul class="navbar-nav" style="color: white;">
+				        	{% if user.is_authenticated %}
+				        	 <li class="nav-item">
+				            <a class="nav-link" href="{% url 'user-logout' %}" style="color: white;">Cart</a>
+				          	  </li>
+				        	<li class="nav-item">
+				            <a class="nav-link" href="{% url 'user-profile' %}" style="color: white;">Profil</a>
+				          	  </li>
+				        	 <li class="nav-item">
+				            <a class="nav-link" href="{% url 'user-logout' %}" style="color: white;">Logout</a>
+				          	  </li>
+
+				        	{% else %}
 				           <li class="nav-item">
-				            <a class="nav-link" href="{% url 'register-user' %}" style="color: white;">Register</a>
+				            <a class="nav-link" href="{% url 'user-register' %}" style="color: white;">Register</a>
 				          </li>
 				         <li class="nav-item">
-				            <a class="nav-link" href="/admin" style="color: white;">Login</a>
+				            <a class="nav-link" href="{% url 'user-login' %}" style="color: white;">Login</a>
 				          </li>
+				          {% endif %}
 				        </ul>
 				 
 				  </div>
 				</nav>
 
 			<div class="container mt-5">
+				{% if messages %}
+				{% for message in messages %}
+					<div class="col-12 alert alert-{{message.tags}}">
+						{{message}}
+					</div>
+				{% endfor %}
+				{% endif %}
+
 				{% block content %}
 				 {% endblock %}
+				
 
 			</div>
 	    

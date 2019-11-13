@@ -1,0 +1,22 @@
+
+{% extends 'blog/base.html'%}
+ 
+{% load crispy_forms_tags %}
+{% block content %}
+
+		<div class="pl-5 pb-5 img-thumbnail">
+							
+
+				<div class="border-top pt-2">
+					
+					<h2 class="text text-primary mb-5">Profil de l'Utilisateur</h2>
+					<p class="text-info">Nom de l'utilisateur:{{user.username}}</p>
+					<p class="text-info">Email de l'utilisateur:{{user.email}}</p>
+					<p class="text-info">Mot de passe de l'utilisateur:{{user.password}}</p>
+					<small class="text-warning">Le Mot de passe est crypter pour la securité</small>
+					
+				</div>
+				
+				
+		</div>
+{% endblock %}
