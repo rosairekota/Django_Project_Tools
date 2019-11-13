@@ -1,0 +1,21 @@
+
+{% extends 'blog/base.html'%}
+ 
+{% load crispy_forms_tags %}
+{% block content %}
+
+		<div class="pl-5 pb-5">
+							
+
+				<div class="border-top pt-2">
+					
+					<h2 class="text text-success">Vous êtes déconnectés.</h2>
+					
+					<small class="text-muted">voulez-vous vous connecter à nouveau ? 
+						<a href="{% url 'user-login' %}" title="" class="ml-2">Connectez-vous</a>
+					</small>
+				</div>
+				
+				
+		</div>
+{% endblock %}
