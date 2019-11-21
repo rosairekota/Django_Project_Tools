@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #others apps
     'users_app.apps.UsersAppConfig',
     'blog.apps.BlogConfig',
+    'products.apps.ProductsConfig',
     'crispy_forms',
 ]
 
@@ -120,13 +122,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+# Integration des fichiers statics:css,...
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR, 'static_my_proj'),
     )
+# On gere cela dynamiquement :en mode developpement uniquement,...
+
 STATIC_ROOT=os.path.join(BASE_DIR, 'static_cdn')
+
+# ------------------Fin--------------
+
+#ceci permet de generer le dossier media et dans ce dossier url des images va se retrouver avec tous les images
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
+
+
+#ceci permet de styliser bootrsap sous Django
 CRISPY_TEMPLATE_PACK='bootstrap4'
+
+# redirection vers le blog
 LOGIN_REDIRECT_URL='blog-home'
+
+#ceci permet d'imposer login comme url parent
 LOGIN_URL='user-login'
 #
 
