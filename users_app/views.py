@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required 
 from django.contrib import messages
 from .form import UserRegisterForm
 
@@ -23,7 +23,10 @@ def register(request):
 	
 	
 	return render(request,"users/register.html",{"form":form})
-@login_required
-def profile(request):
+
+ #cette annotation permet d'imposer que l'user doit se conecter avant de voir son profile
+ # Ainsi, on doit le rediriger via le file config en mettant l'url parent=login==>#LOGIN_URL='user-login'
+@login_required  
+def profile(request): 
 	return render(request,"users/profile.html")
 
