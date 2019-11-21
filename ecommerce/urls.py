@@ -23,6 +23,7 @@ urlpatterns = [
 	url(r'^$',views.home_page, name='home-project'),
 	url(r'^about/$',views.about_page, name='about_project'),
 	url(r'^contact/$',views.contact_page, name='contact_project'),
+    #comment
 	url(r'^users_app/',include('users_app.urls')),
     url(r'^blog/',include('blog.urls')),
     url(r'^admin/', admin.site.urls),

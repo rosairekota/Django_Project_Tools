@@ -14,7 +14,7 @@ def register(request):
 			messages.success(request,f'le compte de {username} a été crée avec succès!, connectez-vs')
 			
 			
-			#email=form.cleaned_data.get('email')
+			
 			#pwd=form.cleaned_data.get('password1')
 			#User.objects.create(username=username, email=email, password=f'{pwd}')
 			return redirect('user-login')
