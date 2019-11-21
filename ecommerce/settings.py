@@ -146,4 +146,6 @@ LOGIN_REDIRECT_URL='blog-home'
 
 #ceci permet d'imposer login comme url parent
 LOGIN_URL='user-login'
+#
+
 

@@ -25,12 +25,17 @@ urlpatterns = [
 	url(r'^$',views.home_page, name='home-project'),
 	url(r'^about/$',views.about_page, name='about_project'),
 	url(r'^contact/$',views.contact_page, name='contact_project'),
+<<<<<<< HEAD
     
      # Users app- In the Parent project
 	url(r'^register/$', user_views.register, name='user-register'),
     url(r'^profile/$', user_views.profile, name='user-profile'),
     url(r'^login/$', auth_views.login, {'template_name': 'users/login.html'}, name='user-login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'users/logout.html'}, name='user-logout'),
+=======
+    #comment
+	url(r'^users_app/',include('users_app.urls')),
+>>>>>>> master
     url(r'^blog/',include('blog.urls')),
     url(r'^admin/', admin.site.urls),
 ]
