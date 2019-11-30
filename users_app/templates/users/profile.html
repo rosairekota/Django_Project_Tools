@@ -11,8 +11,30 @@
 					
 					<h2 class="text text-primary mb-5">Profil de l'Utilisateur</h2>
 					<p class="text-info">Nom de l'utilisateur:{{user.username}}</p>
-					<img src="{{user.profile.image.url}}" class="img-circle" alt="">
+					<img src="{{user.profile.image.url}}" class="rounded-circle" alt="">
 					<p class="text-info">Email de l'utilisateur:{{user.email}}</p>	
+
+				</div>
+				<div class="mt-5 pt-2">
+					<form  method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+							<fieldset class="form-group">
+						<legend class="border-top mb-4 text-center text-info"><p>Mettre A jour votre Profile</p></legend>
+						<div class="row">
+							<div class="col-sm-6 col-6 offset-sm-3">
+								
+									{{ user_form|crispy }}
+									{{ profile_form|crispy }} <!-- as_p: permet d'aligner les explik input -->
+							
+							</div>
+							<div class="col-sm-6 col-6 offset-sm-3">
+							 <button type="submit" class="btn btn-outline-primary btn-block">Update</button>
+							
+							</div>
+						
+					</fieldset>
+
+					</form>	
 
 				</div>
 				
